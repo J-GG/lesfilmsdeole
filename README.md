@@ -1,0 +1,1 @@
+Execute `git config core.hooksPath hooks` to enable the hooks.
