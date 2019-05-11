@@ -22,7 +22,7 @@ SECRET_KEY = os.environ.get("LESFILMSDEOLE_SECRET_KEY", "2@o-yih2@c8&(q1wp@5sp12
 
 DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", False)
 
-ALLOWED_HOSTS = os.environ.get("LESFILMSDEOLE_ALLOWED_HOSTS", "localhost,192.168.1.13").split(",")
+ALLOWED_HOSTS = os.environ.get("LESFILMSDEOLE_ALLOWED_HOSTS", "localhost").split(",")
 
 # Application definition
 
@@ -113,8 +113,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
