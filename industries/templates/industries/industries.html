@@ -1,0 +1,28 @@
+<div id="industries" class="view background-view text-white top-strip bottom-strip"
+        {% if content.background %}
+     style="background-image: url('{{ content.background.url }}')"
+        {% endif %}>
+    <div class="transparent-blue-gradient d-flex justify-content-center align-items-center py-9">
+        <div class="container">
+            <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">
+                {{ content.title }}
+            </h2>
+            <hr class="border-white border-top-4 border-double w-12">
+            <p class="lead text-center w-responsive mx-auto mb-5">
+                {{ content.heading }}
+            </p>
+
+            <div class="row">
+                {% for industry in industries %}
+                    <div class="col-lg-4 text-center px-2 py-2">
+                        <div class="py-3 px-1 industry">
+                            <i class="fas fa-{{ industry.icon }} font-7 text-secondary"></i>
+                            <h3 class="h3-responsive mt-5 mb-4">{{ industry.name }}</h3>
+                            <p>{{ industry.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

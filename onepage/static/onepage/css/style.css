@@ -176,6 +176,11 @@ a.focus-text-secondary:focus {
 2. Site sections
 ***********************************/
 
+.background-view {
+    background: no-repeat center fixed;
+    background-size: cover;
+}
+
 .top-strip:before {
     content: '';
     position: absolute;
@@ -278,7 +283,7 @@ a.focus-text-secondary:focus {
 ***********************************/
 
 #industries {
-    background: url("../img/industries.jpg") no-repeat center fixed;
+    background: url("/uploads/industries/industries.jpg") no-repeat center fixed;
     background-size: cover;
 }
 
