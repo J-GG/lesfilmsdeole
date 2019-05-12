@@ -8,9 +8,9 @@
                 {{ content.title }}
             </h2>
             <hr class="border-white border-top-4 border-double w-12">
-            <p class="lead text-center w-responsive mx-auto mb-5">
-                {{ content.heading }}
-            </p>
+            <div class="lead text-center w-responsive mx-auto mb-5">
+                {{ content.heading|safe }}
+            </div>
 
             <div class="row">
                 {% for industry in industries %}
