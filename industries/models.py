@@ -1,12 +1,13 @@
 from django.db import models
+from filer.fields.image import FilerImageField
 
 
 class IndustriesContent(models.Model):
     """Content of the industries section."""
 
-    title = models.CharField(max_length=200, verbose_name="Titre")
-    heading = models.TextField(verbose_name="Entête")
-    background = models.ImageField(upload_to="industries/", blank=True, null=True, verbose_name="Image de fond")
+    title = models.CharField(max_length=200, verbose_name="Titre", null=True)
+    heading = models.TextField(verbose_name="Entête", null=True)
+    background = FilerImageField(blank=True, null=True, verbose_name="Image de fond", on_delete="cascade")
 
     class Meta:
         verbose_name = "Contenu"
