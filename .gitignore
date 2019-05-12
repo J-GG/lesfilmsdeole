@@ -2,6 +2,9 @@
 assets/
 uploads/
 
+# DB
+*.sqlite3
+
 # IDE
 .idea
 
