@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("LESFILMSDEOLE_SECRET_KEY", "2@o-yih2@c8&(q1wp@5sp12rljojvul7==4&sf00k+2td2tdaf")
 
-DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", True)
+DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", False)
 
 ALLOWED_HOSTS = os.environ.get("LESFILMSDEOLE_ALLOWED_HOSTS", "localhost").split(",")
 
@@ -85,24 +85,16 @@ WSGI_APPLICATION = 'lesfilmsdeole.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-if DEBUG and not os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE', "django.db.backends.postgresql_psycopg2"),
+        'NAME': os.environ.get('LESFILMSDEOLE_DATABASE_NAME', "lesfilmsdeole"),
+        'USER': os.environ.get('LESFILMSDEOLE_DATABASE_USER', "postgres"),
+        'PASSWORD': os.environ.get('LESFILMSDEOLE_DATABASE_PASSWORD', "toor"),
+        'HOST': os.environ.get('LESFILMSDEOLE_DATABASE_HOST', "localhost"),
+        'PORT': os.environ.get('LESFILMSDEOLE_DATABASE_PORT', "5432"),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': os.environ['LESFILMSDEOLE_DATABASE_ENGINE'],
-            'NAME': os.environ['LESFILMSDEOLE_DATABASE_NAME'],
-            'USER': os.environ['LESFILMSDEOLE_DATABASE_USER'],
-            'PASSWORD': os.environ['LESFILMSDEOLE_DATABASE_PASSWORD'],
-            'HOST': os.environ['LESFILMSDEOLE_DATABASE_HOST'],
-            'PORT': os.environ['LESFILMSDEOLE_DATABASE_PORT'],
-        }
-    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
