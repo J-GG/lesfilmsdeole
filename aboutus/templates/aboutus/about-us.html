@@ -15,9 +15,9 @@
                          alt="{{ content.first_item_title }}" width="100">
                 {% endif %}
                 <h3 class="h3-responsive font-weight-bold my-4">{{ content.first_item_title }}</h3>
-                <p class="grey-text mb-md-0 mb-5">
+                <div class="grey-text mb-md-0 mb-5">
                     {{ content.first_item_description|safe }}
-                </p>
+                </div>
             </div>
             <div class="col-md-4 text-center">
                 {% if content.second_item_image %}
@@ -25,9 +25,9 @@
                          alt="{{ content.second_item_title }}" width="100">
                 {% endif %}
                 <h3 class="h3-responsive font-weight-bold my-4">{{ content.second_item_title }}</h3>
-                <p class="grey-text mb-md-0 mb-5">
+                <div class="grey-text mb-md-0 mb-5">
                     {{ content.second_item_description|safe }}
-                </p>
+                </div>
             </div>
             <div class="col-md-4 text-center">
                 {% if content.third_item_image %}
@@ -35,9 +35,9 @@
                          alt="{{ content.third_item_title }}" width="100">
                 {% endif %}
                 <h3 class="h3-responsive font-weight-bold my-4">{{ content.third_item_title }}</h3>
-                <p class="grey-text mb-md-0 mb-5">
+                <div class="grey-text mb-md-0 mb-5">
                     {{ content.third_item_description|safe }}
-                </p>
+                </div>
             </div>
 
             {% if content.more_content %}

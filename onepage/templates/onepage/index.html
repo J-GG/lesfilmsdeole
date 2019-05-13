@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -30,7 +30,7 @@
 <body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
-    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries %}
+    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio %}
     <!--/.Navbar -->
 
     <!--Introduction -->
@@ -48,127 +48,7 @@
     <!--/.Industries -->
 
     <!--Portfolio -->
-    <div id="portfolio" class="view py-9">
-        <div class="container">
-            <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">Portfolio</h2>
-            <hr class="border-primary border-top-4 border-double w-12">
-            <p class="lead grey-text text-center w-responsive mx-auto mb-5">
-                Voici un extrait des divers projets que nous avons réalisés ces dernières années.
-            </p>
-
-            <div class="pb-5 text-center">
-                <div class="media-boxes-filter text-center" id="filter">
-                    <button class="filter selected font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
-                            data-filter="*">Tous
-                    </button>
-                    <button class="filter font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
-                            data-filter=".film">Court-métrage
-                    </button>
-                    <button class="filter font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
-                            data-filter=".video">Vidéo
-                    </button>
-                    <button class="filter font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
-                            data-filter=".photography">Photographie
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="grid" class="px-lg-2">
-            <div class="media-box video" data-columns="2">
-                <div class="media-box-image">
-                    <div data-width="16" data-height="9"
-                         data-thumbnail="https://img.youtube.com/vi/MEzEwoRgC0A/maxresdefault.jpg"></div>
-                    <div class="thumbnail-overlay overlay-always-visible bg-transparent">
-                        <i class="fa fa-play hover-display-none"></i>
-                    </div>
-                    <div class="thumbnail-overlay mb-open-popup" data-type="iframe"
-                         data-src="https://www.youtube.com/watch?v=MEzEwoRgC0A"
-                         data-title="Sens intense : Film promotionnel de la ville de Sens">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Sens intense : Film promotionnel de la ville de Sens
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2018</div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-box film">
-                <div class="media-box-image">
-                    <div data-width="752" data-height="500"
-                         data-thumbnail="https://img.youtube.com/vi/fOIrIEHlWX4/maxresdefault.jpg"></div>
-                    <div class="thumbnail-hide-overlay-on-hover thumbnail-overlay overlay-always-visible">
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="thumbnail-overlay mb-open-popup" data-type="iframe"
-                         data-src="https://www.youtube.com/watch?v=fOIrIEHlWX4" data-title="Balles de noce">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Balles de noce
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2018</div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-box photography">
-                <div class="media-box-image">
-                    <div data-width="9" data-height="16"
-                         data-thumbnail="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-39.jpg"></div>
-                    <div class="thumbnail-overlay mb-open-popup"
-                         data-src="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-39.jpg"
-                         data-title="Les rochers de Picato">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Les rochers de Picato
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2017</div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-box photography">
-                <div class="media-box-image">
-                    <div data-width="752" data-height="500"
-                         data-thumbnail="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-30.jpg"></div>
-                    <div class="thumbnail-overlay mb-open-popup"
-                         data-src="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-30.jpg"
-                         data-title="Un champ de blé">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Un champ de blé
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2017</div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-box photography">
-                <div class="media-box-image">
-                    <div data-width="752" data-height="500"
-                         data-thumbnail="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-28.jpg"></div>
-                    <div class="thumbnail-overlay mb-open-popup"
-                         data-src="http://www.castlecodeweb.com/mediaboxes/example/gallery/img-28.jpg"
-                         data-title="Golden Bridge">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Golden Bridge
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2017</div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-box video">
-                <div class="media-box-image">
-                    <div data-width="752" data-height="500" data-thumbnail="video_thumb.png">
-                        <!-- A récupérer dynamiquement coté serveur--></div>
-                    <div class="thumbnail-hide-overlay-on-hover thumbnail-overlay overlay-always-visible">
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="thumbnail-overlay mb-open-popup" data-type="iframe"
-                         data-src="https://vimeo.com/100026514"
-                         data-title="Showreel">
-                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
-                            Showreel
-                        </h3>
-                        <div class="media-box-date text-white h4-responsive">2017</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "portfolio/portfolio.html" with content=sections.portfolio.content medias=sections.portfolio.medias %}
     <!--/.Portfolio -->
 
     <!--Pricing -->
@@ -744,10 +624,10 @@
                                             <i class="fas fa-map-marker-alt"></i>
                                         </a>
                                         <p>Montacher, Yonne</p>
-                                        <a href="tel:06 82 21 45 76" class="btn-floating primary accent-1">
+                                        <a href="tel:0682214576" class="btn-floating primary accent-1">
                                             <i class="fas fa-phone"></i>
                                         </a>
-                                        <p><a href="tel:06 82 21 45 76">06 82 21 45 76</a></p>
+                                        <p><a href="tel:0682214576">06 82 21 45 76</a></p>
                                         <a class="btn-floating primary accent-1"
                                            href="mailto:lesfilmsdeole@gmail.com">
                                             <i class="fas fa-envelope"></i>
@@ -778,7 +658,7 @@
                             </a>
                         </p>
                         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLes-Films-dEole-745192462231948%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                                class="w-100" height="500" frameborder="0" allow="encrypted-media"></iframe>
+                                class="w-100 border-0" height="500" allow="encrypted-media"></iframe>
                     </div>
                 </div>
             </div>

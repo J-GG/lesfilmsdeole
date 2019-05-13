@@ -20,7 +20,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#{{ portfolio.content.title|slugify }}">
+                        {{ portfolio.content.title }}
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#pricing">Prestations</a>

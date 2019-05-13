@@ -1,0 +1,51 @@
+<div id="{{ content.title|slugify }}" class="view py-9">
+    <div class="container">
+        <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">
+            {{ content.title }}
+        </h2>
+        <hr class="border-primary border-top-4 border-double w-12">
+        <div class="lead grey-text text-center w-responsive mx-auto mb-5">
+            {{ content.heading|safe }}
+        </div>
+
+        <div class="pb-5 text-center">
+            <div class="media-boxes-filter text-center" id="filter">
+                <button class="filter selected font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
+                        data-filter="*">Tous
+                </button>
+                {% for filter in content.filters_list %}
+                    <button class="filter font-3 text-uppercase text-primary border border-primary white hover-transparent-blue-gradient hover-text-white p-3 m-2"
+                            data-filter=".{{ filter|slugify }}">{{ filter }}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="grid" class="px-lg-2">
+        {% for media in medias %}
+            <div class="media-box {% for filter in  media.filters_as_list %}{{ filter|slugify }} {% endfor %}"
+                 data-columns="{{ media.columns }}">
+                <div class="media-box-image">
+                    <div data-width="{{ media.width }}" data-height="{{ media.height }}"
+                         data-thumbnail="{{ media.thumbnail }}"
+                    ></div>
+                    {% if media.is_youtube_video or media.is_vimeo_video %}
+                        <div class="thumbnail-overlay overlay-always-visible bg-transparent">
+                            <i class="fa fa-play hover-display-none"></i>
+                        </div>
+                    {% endif %}
+                    <div class="thumbnail-overlay mb-open-popup"
+                         {% if media.is_youtube_video or media.is_video_video %}data-type="iframe"{% endif %}
+                         data-src="{{ media.link }}"
+                         data-title="{{ media.title }}">
+                        <h3 class="media-box-title text-white text-uppercase letter-spacing-1 h3-responsive">
+                            {{ media.title }}
+                        </h3>
+                        <div class="media-box-date text-white h4-responsive">{{ media.description }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
