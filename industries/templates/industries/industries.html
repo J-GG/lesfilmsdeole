@@ -1,4 +1,4 @@
-<div id="industries" class="view background-view text-white top-strip bottom-strip"
+<div id="{{ content.title|slugify }}" class="view background-view text-white top-strip bottom-strip"
         {% if content.background %}
      style="background-image: url('{{ content.background.url }}')"
         {% endif %}>

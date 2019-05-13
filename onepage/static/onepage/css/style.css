@@ -265,7 +265,7 @@ a.focus-text-secondary:focus {
 2.3 About Us
 ***********************************/
 
-#about-us .text-box:before {
+.text-box-icon:before {
     content: "";
     position: absolute;
     top: -30px;
@@ -281,11 +281,6 @@ a.focus-text-secondary:focus {
 /***********************************
 2.4 Industries
 ***********************************/
-
-#industries {
-    background: url("/uploads/industries/industries.jpg") no-repeat center fixed;
-    background-size: cover;
-}
 
 .industry {
     transition-duration: 0.4s;

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-xl navbar-light white fixed-top scrolling-navbar">
+    <a class="navbar-brand" href="#intro">
+        <img class="logo" src="" alt="Logo Les Films d'Éole">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+            aria-controls="navbar-links" aria-expanded="false" aria-label="Afficher menu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbar-links">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#{{ about_us.content.title|slugify }}">
+                        {{ about_us.content.title }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#{{ industries.content.title|slugify }}">
+                        {{ industries.content.title }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Prestations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#equipment">Moyens techniques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Ils parlent de nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#regulations">Réglementation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

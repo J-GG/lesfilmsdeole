@@ -1,0 +1,53 @@
+<div id="{{ content.title|slugify }}" class="view py-9">
+    <div class="container">
+        <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">
+            {{ content.title }}
+        </h2>
+        <hr class="border-primary border-top-4 border-double w-12">
+        <div class="lead grey-text text-center w-responsive mx-auto mb-5">
+            {{ content.heading|safe }}
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center">
+                {% if content.first_item_image %}
+                    <img class="img-fluid m-auto" src="{{ content.first_item_image.url }}"
+                         alt="{{ content.first_item_title }}" width="100">
+                {% endif %}
+                <h3 class="h3-responsive font-weight-bold my-4">{{ content.first_item_title }}</h3>
+                <p class="grey-text mb-md-0 mb-5">
+                    {{ content.first_item_description|safe }}
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                {% if content.second_item_image %}
+                    <img class="img-fluid m-auto" src="{{ content.second_item_image.url }}"
+                         alt="{{ content.second_item_title }}" width="100">
+                {% endif %}
+                <h3 class="h3-responsive font-weight-bold my-4">{{ content.second_item_title }}</h3>
+                <p class="grey-text mb-md-0 mb-5">
+                    {{ content.second_item_description|safe }}
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                {% if content.third_item_image %}
+                    <img class="img-fluid m-auto" src="{{ content.third_item_image.url }}"
+                         alt="{{ content.third_item_title }}" width="100">
+                {% endif %}
+                <h3 class="h3-responsive font-weight-bold my-4">{{ content.third_item_title }}</h3>
+                <p class="grey-text mb-md-0 mb-5">
+                    {{ content.third_item_description|safe }}
+                </p>
+            </div>
+
+            {% if content.more_content %}
+                <div class="text-box text-box-icon">
+                    {% if content.more_title %}
+                        <div class="text-box-title">{{ content.more_title }}</div>
+                    {% endif %}
+                    {{ content.more_content|safe }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

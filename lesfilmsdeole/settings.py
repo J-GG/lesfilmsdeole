@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("LESFILMSDEOLE_SECRET_KEY", "2@o-yih2@c8&(q1wp@5sp12rljojvul7==4&sf00k+2td2tdaf")
 
-DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", False)
+DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", True)
 
 ALLOWED_HOSTS = os.environ.get("LESFILMSDEOLE_ALLOWED_HOSTS", "localhost").split(",")
 
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'onepage',
+    'navbar',
+    'aboutus',
     'industries',
 ]
 
@@ -77,6 +79,7 @@ WSGI_APPLICATION = 'lesfilmsdeole.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
 
 if DEBUG and not os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE'):
     DATABASES = {

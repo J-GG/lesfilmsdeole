@@ -31,45 +31,7 @@
 <body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
-    <nav class="navbar navbar-expand-xl navbar-light white fixed-top scrolling-navbar">
-        <a class="navbar-brand" href="#intro">
-            <img class="logo" src="{% static "onepage/img/logo.png" %}" alt="Logo Les Films d'Éole">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
-                aria-controls="navbar-links" aria-expanded="false" aria-label="Afficher menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbar-links">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about-us">Qui sommes-nous ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#industries">Secteurs d'activités</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Prestations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#equipment">Moyens techniques</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Ils parlent de nous</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#regulations">Réglementation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include "navbar/navbar.html" with about_us=sections.about_us industries=sections.industries %}
     <!--/.Navbar -->
 
     <!--Introduction -->
@@ -105,70 +67,7 @@
 
 <main>
     <!--About Us -->
-    <div id="about-us" class="view py-9">
-        <div class="container">
-            <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">Qui sommes-nous ?</h2>
-            <hr class="border-primary border-top-4 border-double w-12">
-            <p class="lead grey-text text-center w-responsive mx-auto mb-5">
-                Des professionnels du pilotage, de l'aéromodelisme et de l'audiovisuel à votre service.
-            </p>
-
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <img class="img-fluid m-auto" src="{% static "onepage/img/drone.svg" %}"
-                         alt="Photos et vidéos par drone" width="100">
-                    <h3 class="h3-responsive font-weight-bold my-4">Photos & Vidéos aériennes</h3>
-                    <p class="grey-text mb-md-0 mb-5">
-                        Prises de vues photos et vidéos haute définition par drone. Tout type de <b>prestations
-                        artistiques</b>
-                        (communication d'entreprise, publicité, cinéma...) et <b>techniques</b> (industrie,
-                        agriculture,
-                        immobilier...).
-                    </p>
-
-                </div>
-
-                <div class="col-md-4 text-center">
-                    <img class="img-fluid m-auto" src="{% static "onepage/img/star.svg" %}" alt="Expertise"
-                         width="100">
-                    <h3 class="h3-responsive font-weight-bold my-4">Expertise</h3>
-                    <p class="grey-text mb-md-0 mb-5">
-                        Les Films d’Éole, c’est 25 ans d’expérience dans le pilotage d’aéronefs et de drones en
-                        particulier ainsi que 15 ans d’expérience dans la <b>réalisation de films</b>
-                        (institutionnels,
-                        cinéma, clips).
-                    </p>
-
-                </div>
-
-                <div class="col-md-4 text-center">
-                    <img class="img-fluid m-auto" src="{% static "onepage/img/france.svg" %}" alt="France"
-                         width="100">
-                    <h3 class="h3-responsive font-weight-bold my-4">Dans toute la France</h3>
-                    <p class="grey-text">
-                        Situés au carrefour de l’<b>Yonne</b>, du <b>Loiret</b>, de la <b>Seine et Marne</b> et de
-                        l’<b>Aube</b>,
-                        Les Films d’Éole peuvent intervenir sur toute la France.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="text-box">
-                <div class="text-box-title">Pour aller plus loin</div>
-                <p>
-                    Vous recherchez une <b>solution de communication globale </b>?<br>
-                    Dans l'objectif de répondre toujours plus aux besoins de nos clients, nous nous sommes réunis
-                    avec d'autres indépendants professionnels de la communication au sein de l'alliance <b><a
-                        href="https://impulsion-creative.fr" target="_blank">Impulsion</a></b>.
-                    La complémentarité de nos compétences nous permet de pouvoir répondre à vos attentes dans le
-                    cadre d'une stratégie de communication globale et compétitive face à vos concurrents.
-                    <br>Envoyez-nous un message via le formulaire de contact pour en savoir plus à propos des
-                    prestations disponibles et définir vos besoins.
-                </p>
-            </div>
-        </div>
-    </div>
+    {% include "aboutus/about-us.html" with content=sections.about_us.content %}
     <!--/.About Us -->
 
     <!--Industries -->
