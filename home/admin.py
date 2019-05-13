@@ -15,7 +15,7 @@ class HomeContentAdmin(admin.ModelAdmin):
         :param section: The section.
         :return: The 100 first characters of the subtitle.
         """
-        return Truncator(section.heading).chars(100, truncate='...')
+        return Truncator(section.subtitle).chars(100, truncate='...')
 
     truncated_subtitle.short_description = "Aperçu du sous-titre"
 

@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Les Films d'Éole : Images aériennes par drone</title>
-    <meta name="description"
-          content="Prises de vues photos et vidéos par drone en France. Prestations artistiques (communication d'entreprise, publicité, cinéma...) ou techniques (industrie, agriculture, immobilier...). Images professionnelles et de très haute qualité. 25 ans d'expérience dans le pilotage d'aéronefs et de drones.">
+    <title>{{ configuration.title }}</title>
+    <meta name="description" content="{{ configuration.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="{% static "onepage/img/favicon.png" %}">
+    <link rel="shortcut icon" href="{{ configuration.favicon.url }}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -31,7 +30,7 @@
 <body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
-    {% include "navbar/navbar.html" with home=sections.home about_us=sections.about_us industries=sections.industries %}
+    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries %}
     <!--/.Navbar -->
 
     <!--Introduction -->
