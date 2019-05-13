@@ -78,12 +78,24 @@ WSGI_APPLICATION = 'lesfilmsdeole.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG and not os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': os.environ['LESFILMSDEOLE_DATABASE_ENGINE'],
+            'NAME': os.environ['LESFILMSDEOLE_DATABASE_NAME'],
+            'USER': os.environ['LESFILMSDEOLE_DATABASE_USER'],
+            'PASSWORD': os.environ['LESFILMSDEOLE_DATABASE_PASSWORD'],
+            'HOST': os.environ['LESFILMSDEOLE_DATABASE_HOST'],
+            'PORT': os.environ['LESFILMSDEOLE_DATABASE_PORT'],
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
