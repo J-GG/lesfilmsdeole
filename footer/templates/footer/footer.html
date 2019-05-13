@@ -1,0 +1,33 @@
+<footer id="footer" class="view background-view text-white"
+        {% if content.background %}
+        style="background-image: url('{{ content.background.url }}')"
+        {% endif %}>
+    <div class="transparent-blue-gradient d-flex justify-content-center align-items-center pt-5 pb-2">
+        <div class="container">
+            <blockquote class="text-center w-100 lead">
+                {{ content.text|safe }}
+            </blockquote>
+            <p class="text-center w-100">
+                {% if content.terms %}
+                    <a class="white-text hover-underline" href="{{ content.terms.url }}" target="_blank">
+                        Conditions générales de vente
+                    </a>
+                {% endif %}
+                {% if content.terms and content.legal_notice %}
+                    -
+                {% endif %}
+                {% if content.legal_notice %}
+                    <a class="white-text hover-underline" href="{{ content.legal_notice.url }}"
+                       target="_blank">
+                        Mentions légales
+                    </a>
+                {% endif %}
+            </p>
+            <p class="text-center w-100">Copyright © 2019 Les Films d'Éole</p>
+        </div>
+    </div>
+    <div id="scroll-top">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+    <div id="loader"></div>
+</footer>

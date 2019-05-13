@@ -676,11 +676,6 @@ a.focus-text-secondary:focus {
 2.10 Footer
 ***********************************/
 
-#footer {
-    background: url("../img/field.jpg") no-repeat center fixed;
-    background-size: cover;
-}
-
 #scroll-top {
     position: fixed;
     right: 20px;
