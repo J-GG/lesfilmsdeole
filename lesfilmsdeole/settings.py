@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'onepage',
     'navbar',
+    'home',
     'aboutus',
     'industries',
 ]

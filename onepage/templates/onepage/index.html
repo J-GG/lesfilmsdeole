@@ -31,37 +31,11 @@
 <body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
-    {% include "navbar/navbar.html" with about_us=sections.about_us industries=sections.industries %}
+    {% include "navbar/navbar.html" with home=sections.home about_us=sections.about_us industries=sections.industries %}
     <!--/.Navbar -->
 
     <!--Introduction -->
-    <div id="intro" class="view h-100">
-        <div class="rgba-gradient h-100 d-flex justify-content-center align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-xl-5 mb-5 mb-md-0 white-text text-center text-md-left mt-xl-4 d-flex flex-column justify-content-end">
-                        <h1 class="h1-responsive font-weight-bold mt-sm-5">Les Films d'Éole</h1>
-                        <hr class="hr-light w-100">
-                        <h2 class="h2-responsive mb-4">Images aériennes par drones</h2>
-                        <div>
-                            <a class="btn border border-white white text-secondary hover-text-white hover-border-white hover-transparent-background focus-text-secondary"
-                               href="#contact">Nous
-                                contacter</a>
-                            <a class="btn border border-white hover-text-white hover-secondary-background hover-border-secondary"
-                               href="#about-us">En
-                                savoir
-                                plus</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xl-7 mt-xl-5 embed-responsive embed-responsive-16by9 z-depth-1">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zhwMITujEQI"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "home/home.html" with content=sections.home.content about_us=sections.about_us contact=sections.contact %}
     <!--/.Introduction -->
 </header>
 

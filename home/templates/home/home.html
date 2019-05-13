@@ -1,0 +1,32 @@
+<div id="{{ content.title|slugify }}" class="view background-view h-100"
+        {% if content.background %}
+     style="background-image: url('{{ content.background.url }}')"
+        {% endif %}>
+    <div class="rgba-gradient h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xl-5 mb-5 mb-md-0 white-text text-center text-md-left mt-xl-4 d-flex flex-column justify-content-end">
+                    <h1 class="h1-responsive font-weight-bold mt-sm-5">{{ content.title }}</h1>
+                    <hr class="hr-light w-100">
+                    <h2 class="h2-responsive mb-4">{{ content.subtitle|safe }}</h2>
+                    <div>
+                        <a class="btn border border-white white text-secondary hover-text-white hover-border-white hover-transparent-background focus-text-secondary"
+                           href="#{{ contact.content.title|slugify }}">
+                            Nous contacter
+                        </a>
+                        <a class="btn border border-white hover-text-white hover-secondary-background hover-border-secondary"
+                           href="#{{ about_us.content.title|slugify }}">
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+                {% if content.video %}
+                    <div class="col-md-6 col-xl-7 mt-xl-5 embed-responsive embed-responsive-16by9 z-depth-1">
+                        <iframe class="embed-responsive-item" src="{{ content.video }}"
+                                allowfullscreen></iframe>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -253,13 +253,8 @@ a.focus-text-secondary:focus {
 }
 
 /***********************************
-2.2 Intro
+2.2 Home
 ***********************************/
-
-#intro {
-    background: url("../img/intro.jpg") no-repeat center fixed;
-    background-size: cover;
-}
 
 /***********************************
 2.3 About Us
