@@ -8,7 +8,6 @@ import filer.fields.image
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -23,7 +22,9 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200, verbose_name='Titre')),
                 ('subtitle', ckeditor.fields.RichTextField(blank=True, null=True, verbose_name='Sous-titre')),
                 ('video', models.CharField(blank=True, max_length=200, null=True, verbose_name='Lien de la vidéo')),
-                ('background', filer.fields.image.FilerImageField(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.FILER_IMAGE_MODEL, verbose_name='Image de fond')),
+                ('background',
+                 filer.fields.image.FilerImageField(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                                    to=settings.FILER_IMAGE_MODEL, verbose_name='Image de fond')),
             ],
             options={
                 'verbose_name': 'Contenu',

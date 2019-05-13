@@ -9,10 +9,10 @@ class FooterContent(models.Model):
 
     text = RichTextField(blank=True, null=True, verbose_name="Texte")
     terms = FilerFileField(blank=True, null=True, verbose_name="Conditions générales de ventes",
-                           on_delete=models.DO_NOTHING, related_name="terms")
+                           on_delete=models.SET_NULL, related_name="terms")
     legal_notice = FilerFileField(blank=True, null=True, verbose_name="Mentions légales",
-                                  on_delete=models.DO_NOTHING, related_name="legal_notice")
-    background = FilerImageField(blank=True, null=True, verbose_name="Image de fond", on_delete=models.DO_NOTHING,
+                                  on_delete=models.SET_NULL, related_name="legal_notice")
+    background = FilerImageField(blank=True, null=True, verbose_name="Image de fond", on_delete=models.SET_NULL,
                                  related_name="background")
 
     class Meta:

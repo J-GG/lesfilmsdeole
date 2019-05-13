@@ -8,9 +8,9 @@ class Configuration(models.Model):
 
     title = models.CharField(max_length=200, verbose_name="Titre du site")
     description = models.TextField(verbose_name="Description du site (apparait dans les moteurs de cherche)")
-    favicon = FilerImageField(verbose_name="Icône dans le navigateur", on_delete=models.DO_NOTHING,
+    favicon = FilerImageField(blank=True, null=True, verbose_name="Icône dans le navigateur", on_delete=models.SET_NULL,
                               related_name="favicon")
-    logo = FilerImageField(verbose_name="Logo", on_delete=models.DO_NOTHING, related_name="logo")
+    logo = FilerImageField(blank=True, null=True, verbose_name="Logo", on_delete=models.SET_NULL, related_name="logo")
 
     class Meta:
         verbose_name = "Configuration"
