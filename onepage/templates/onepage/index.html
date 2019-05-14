@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
 </head>
 
-<body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
+<body data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
     {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio pricing=sections.pricing equipment=sections.equipment testimonials=sections.testimonials regulations=sections.regulations contact=sections.contact %}
@@ -79,7 +79,6 @@
 <!--/.Footer -->
 {% include "footer/footer.html" with configuration=configuration content=sections.footer.content %}
 <!--/.Footer -->
-
 
 <!-- JavaScript-->
 <script

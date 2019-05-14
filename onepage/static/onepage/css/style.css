@@ -684,13 +684,3 @@ a.focus-text-secondary:focus {
 #scroll-top:hover {
     bottom: 25px;
 }
-
-#loader {
-    background: url('../img/loader.gif') center no-repeat black;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
