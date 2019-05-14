@@ -667,64 +667,7 @@
     <!--/.Contact Us -->
 
     <!--Partnership -->
-    <div id="partnership" class="view py-5">
-        <div class="container">
-            <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">Partenaires</h2>
-            <hr class="border-primary border-top-4 border-double w-12">
-            <div class="owl-carousel owl-theme" id="owl-partnership">
-                <div class="item">
-                    <a href="https://www.impulsion-creative.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/impulsion.jpg" %}" alt="Impulsion">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="http://www.orprod.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/orprod.jpg" %}" alt="Orprod">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.arrowstudio.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/arrow.jpg" %}" alt="Arrow studio">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://la-forge-studio.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/la_forge.jpg" %}" alt="Studio La Forge">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.123topodrone.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/123_topo_drone.jpg" %}" alt="123 Topo Drone">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="http://www.marvincommunication.com" target="_blank">
-                        <img src="{% static "onepage/img/partnership/marvin_communication.jpg" %}"
-                             alt="Marvin communication">
-                    </a>
-                </div>
-                <div class="item">
-                    <img src="{% static "onepage/img/partnership/digital_video_production.jpg" %}"
-                         alt="Digital Vidéo Production">
-                </div>
-                <div class="item">
-                    <a href="https://www.darelite52.com" target="_blank">
-                        <img src="{% static "onepage/img/partnership/darelite_52.jpg" %}" alt="Darelite 52">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://fghproduction.com" target="_blank"><img
-                            src="{% static "onepage/img/partnership/fgh_prod.jpg" %}" alt="FGH Production">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.idealprod.fr" target="_blank">
-                        <img src="{% static "onepage/img/partnership/ideal_prod.jpg" %}" alt="Idéal Productions">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "partnership/partnership.html" with content=sections.partnership.content partners=sections.partnership.partners %}
     <!--/.Partnership -->
 </main>
 
