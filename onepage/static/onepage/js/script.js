@@ -9,6 +9,7 @@ $(document).ready(function () {
     /*=====================================
     Smooth Scroll
     =====================================*/
+    
     $("a").click(function (event) {
         if (this.hash !== "") {
             event.preventDefault();

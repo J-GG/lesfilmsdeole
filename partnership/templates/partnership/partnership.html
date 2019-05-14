@@ -12,7 +12,7 @@
             {% for partner in partners %}
                 <div class="item">
                     {% if partner.link %}
-                        <a href="{{ partner.link }}" target="_blank">
+                        <a href="{{ partner.link }}" target="_blank" rel="noopener">
                     {% endif %}
                     <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
                     {% if partner.link %}

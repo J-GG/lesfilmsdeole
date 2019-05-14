@@ -9,7 +9,7 @@
             </blockquote>
             <p class="text-center w-100">
                 {% if content.terms %}
-                    <a class="white-text hover-underline" href="{{ content.terms.url }}" target="_blank">
+                    <a class="white-text hover-underline" href="{{ content.terms.url }}" target="_blank" rel="noopener">
                         Conditions générales de vente
                     </a>
                 {% endif %}
@@ -18,7 +18,7 @@
                 {% endif %}
                 {% if content.legal_notice %}
                     <a class="white-text hover-underline" href="{{ content.legal_notice.url }}"
-                       target="_blank">
+                       target="_blank" rel="noopener">
                         Mentions légales
                     </a>
                 {% endif %}
