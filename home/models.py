@@ -8,7 +8,7 @@ class HomeContent(models.Model):
 
     title = models.CharField(max_length=200, verbose_name="Titre")
     subtitle = models.CharField(blank=True, null=True, max_length=250, verbose_name="Sous-titre")
-    video = models.CharField(blank=True, null=True, max_length=200, verbose_name="Lien de la vidéo")
+    video = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien de la vidéo")
     background = FilerImageField(blank=True, null=True, verbose_name="Image de fond", on_delete=models.SET_NULL)
 
     class Meta:

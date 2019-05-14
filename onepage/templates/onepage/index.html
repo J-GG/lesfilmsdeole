@@ -30,7 +30,7 @@
 <body class="overflow-hidden" data-spy="scroll" data-target="#navbar-links" data-offset="200">
 <header>
     <!--Navbar -->
-    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio %}
+    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio contact=sections.contact %}
     <!--/.Navbar -->
 
     <!--Introduction -->
@@ -556,114 +556,7 @@
     <!--/.Regulations -->
 
     <!--Contact Us -->
-    <div id="contact" class="view text-white top-strip bottom-strip">
-        <div class="transparent-blue-gradient d-flex justify-content-center align-items-center py-9">
-            <div class="container">
-                <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">Contact</h2>
-                <hr class="border-white border-top-4 border-double w-12">
-                <p class="lead text-center w-responsive mx-auto mb-5">
-                    N'hésitez pas à nous contacter pour toute demande d'information, de devis ou questions
-                    générales.
-                </p>
-                <div class="row mt-4">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-10 mx-auto form-header primary accent-1">
-                                        <h3 class="h3-responsive mt-2"><i class="fas fa-envelope"></i>
-                                            Écrivez-nous</h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <form class="col-lg-8 mb-4 mb-lg-0">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="md-form">
-                                                    <i class="fas fa-user prefix grey-text"></i>
-                                                    <input type="text" id="form-name" class="form-control" required>
-                                                    <label for="form-name">Votre nom</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="md-form">
-                                                    <i class="fas fa-envelope prefix grey-text"></i>
-                                                    <input type="email" id="form-email" class="form-control" required>
-                                                    <label for="form-email">Votre email</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="md-form">
-                                                    <i class="fas fa-tag prefix grey-text"></i>
-                                                    <input type="text" id="form-subject" class="form-control" required>
-                                                    <label for="form-subject">Sujet</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="md-form">
-                                                    <i class="fas fa-pencil-alt prefix grey-text"></i>
-                                                    <textarea id="form-message"
-                                                              class="form-control md-textarea overflow-auto"
-                                                              rows="4" required></textarea>
-                                                    <label for="form-message">Message</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn primary hover-text-white" id="form-submit">
-                                                Envoyer
-                                            </button>
-                                        </div>
-                                    </form>
-                                    <div class="col-lg-4 text-center black-text my-auto">
-                                        <a class="btn-floating primary accent-1">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                        </a>
-                                        <p>Montacher, Yonne</p>
-                                        <a href="tel:0682214576" class="btn-floating primary accent-1">
-                                            <i class="fas fa-phone"></i>
-                                        </a>
-                                        <p><a href="tel:0682214576">06 82 21 45 76</a></p>
-                                        <a class="btn-floating primary accent-1"
-                                           href="mailto:lesfilmsdeole@gmail.com">
-                                            <i class="fas fa-envelope"></i>
-                                        </a>
-                                        <p><a href="mailto:lesfilmsdeole@gmail.com">lesfilmsdeole@gmail.com</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <p class="text-center">
-                            <a href="https://fr-fr.facebook.com/pages/category/Producer/Les-Films-dEole-745192462231948"
-                               target="_blank">
-                                <img src="{% static "onepage/img/facebook.png" %}" width="30"
-                                     class="d-inline-block" alt="Facebook">
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCOI7EFDdpTnEvPW95dFKVrg"
-                               target="_blank">
-                                <img src="{% static "onepage/img/youtube.png" %}" width="30"
-                                     class="d-inline-block" alt="Youtube">
-                            </a>
-                            <a href="https://vimeo.com/user7090814" target="_blank">
-                                <img src="{% static "onepage/img/vimeo.png" %}" width="30"
-                                     class="d-inline-block" alt="Viméo">
-                            </a>
-                        </p>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLes-Films-dEole-745192462231948%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                                class="w-100 border-0" height="500" allow="encrypted-media"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "contact/contact.html" with content=sections.contact.content %}
     <!--/.Contact Us -->
 
     <!--Partnership -->

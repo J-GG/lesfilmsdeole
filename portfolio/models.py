@@ -36,7 +36,7 @@ class PortfolioMedia(models.Model):
     title = models.CharField(max_length=200, verbose_name="Titre")
     description = models.CharField(max_length=200, null=True, verbose_name="Description")
     filters = models.CharField(max_length=200, verbose_name="Filtres séparés par un espace")
-    link = models.CharField(max_length=200, verbose_name="Lien vers l'image ou la vidéo")
+    link = models.URLField(max_length=200, verbose_name="Lien vers l'image ou la vidéo")
     width = models.IntegerField(verbose_name="Largeur de la miniature dans le portfolio (ratio)")
     height = models.IntegerField(verbose_name="Hauteur de la miniature dans le portfolio (ratio)")
     columns = models.IntegerField(verbose_name="Nombre de colonnes de la miniature dans le portfolio")

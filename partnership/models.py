@@ -20,7 +20,7 @@ class Partner(models.Model):
     """Represents an industry to be displayed."""
 
     name = models.CharField(max_length=100, verbose_name="Nom du partenaire")
-    link = models.CharField(max_length=50, blank=True, null=True, verbose_name="Lien du partenaire")
+    link = models.URLField(max_length=50, blank=True, null=True, verbose_name="Lien du partenaire")
     logo = FilerImageField(verbose_name="Logo du partenaire", blank=True, null=True, on_delete=models.SET_NULL,
                            related_name="partner_logo")
     order = models.IntegerField(verbose_name="Ordre d'affichage")
