@@ -1,0 +1,46 @@
+{% load static %}
+<div id="{{ content.title|slugify }}" class="view background-view text-white top-strip bottom-strip"
+        {% if content.background %}
+     style="background-image: url('{{ content.background.url }}')"
+        {% endif %}>
+    <div class="transparent-blue-gradient d-flex justify-content-center align-items-center py-9">
+        <div class="container">
+            <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">
+                {{ content.title }}
+            </h2>
+            <hr class="border-white border-top-4 border-double w-12">
+            <div class="lead text-center w-responsive mx-auto mb-5">
+                {{ content.heading|safe }}
+            </div>
+
+            <div class="owl-carousel owl-theme" id="owl-testimonials">
+                {% for testimonial in testimonials %}
+                    <div class="testimonials-client text-center">
+                        {% if testimonial.logo %}
+                            <img class="testimonials-image mx-auto mb-4"
+                                 src="{{ testimonial.logo.url }}"
+                                 alt="{{ testimonial.title }}">
+                        {% endif %}
+                        <h3 class="h4-responsive font-weight-bolder letter-spacing-1">
+                            - {{ testimonial.title }} -
+                        </h3>
+                        {% if testimonial.subtitle %}
+                            <p class="mt-4">
+                                {{ testimonial.subtitle }}
+                            </p>
+                        {% endif %}
+                        {% if testimonial.link %}
+                            <div class="button">
+                                <a class="btn border border-white hover-text-white hover-secondary-background hover-border-secondary"
+                                   href="{{ testimonial.link }}"
+                                   target="_blank">
+                                    En savoir plus
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

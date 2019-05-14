@@ -369,11 +369,6 @@ a.focus-text-secondary:focus {
 2.7 Testimonials
 ***********************************/
 
-#testimonials {
-    background: url("../img/truck_booth.jpg") no-repeat center fixed;
-    background-size: cover;
-}
-
 .testimonials-image {
     width: 150px !important;
 }
