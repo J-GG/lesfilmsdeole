@@ -196,4 +196,16 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         autoplayHoverPause: true
     });
+
+    /*=====================================
+    Pricing
+    =====================================*/
+
+    $(".price a").click(function () {
+        let name = $(this).siblings("h3").text().trim();
+        $("#form-subject").val("Demande d'informations à propos de " + name);
+        $("#form-subject").trigger("focusin");
+        $("#form-message").val("Bonjour,\nje voudrais avoir plus d'informations concernant une prestation de type " + name + ".");
+        $("#form-message").trigger("focusin");
+    });
 });
