@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'aboutus',
     'industries',
     'portfolio',
+    'equipment',
     'testimonials',
     'regulations',
     'contact',
