@@ -4,6 +4,7 @@ from home.models import HomeContent
 from aboutus.models import AboutUsContent
 from industries.models import IndustriesContent, Industry
 from portfolio.models import PortfolioContent, PortfolioMedia
+from pricing.models import PricingContent, Price
 from equipment.models import EquipmentContent, Equipment
 from testimonials.models import TestimonialsContent, Testimonial
 from regulations.models import RegulationsContent
@@ -19,7 +20,8 @@ def index(request):
     sections["about_us"] = {"content": AboutUsContent.objects.last()}
     sections["industries"] = {"content": IndustriesContent.objects.last(), "industries": Industry.objects.all()}
     sections["portfolio"] = {"content": PortfolioContent.objects.last(), "medias": PortfolioMedia.objects.all()}
-    sections["equipments"] = {"content": EquipmentContent.objects.last(), "equipments": Equipment.objects.all()}
+    sections["pricing"] = {"content": PricingContent.objects.last(), "prices": Price.objects.all()}
+    sections["equipment"] = {"content": EquipmentContent.objects.last(), "equipments": Equipment.objects.all()}
     sections["testimonials"] = {"content": TestimonialsContent.objects.last(),
                                 "testimonials": Testimonial.objects.all()}
     sections["regulations"] = {"content": RegulationsContent.objects.last()}
