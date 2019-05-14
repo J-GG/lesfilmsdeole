@@ -39,16 +39,16 @@
                     {{ content.third_item_description|safe }}
                 </div>
             </div>
-            {{ content.text_before_more|safe }}
-            {% if content.more_content %}
-                <div class="text-box text-box-icon">
-                    {% if content.more_title %}
-                        <div class="text-box-title">{{ content.more_title }}</div>
-                    {% endif %}
-                    {{ content.more_content|safe }}
-                </div>
-            {% endif %}
-            {{ content.text_after_more|safe }}
         </div>
+        {{ content.text_before_more|safe }}
+        {% if content.more_content %}
+            <div class="text-box text-box-icon">
+                {% if content.more_title %}
+                    <div class="text-box-title">{{ content.more_title }}</div>
+                {% endif %}
+                {{ content.more_content|safe }}
+            </div>
+        {% endif %}
+        {{ content.text_after_more|safe }}
     </div>
 </div>
