@@ -22,7 +22,12 @@ class AboutUsContent(models.Model):
     third_item_description = RichTextField(blank=True, null=True, verbose_name="Description du troisième point")
     more_title = models.CharField(blank=True, null=True, max_length=200,
                                   verbose_name="Titre du bloc d'informations supplémentaires")
+    text_before_more = RichTextField(blank=True, null=True,
+                                     verbose_name="Texte avant le bloc d'informations supplémentaires")
     more_content = RichTextField(blank=True, null=True, verbose_name="Contenu du bloc d'informations supplémentaires")
+
+    text_after_more = RichTextField(blank=True, null=True,
+                                    verbose_name="Texte après le bloc d'informations supplémentaires")
 
     class Meta:
         verbose_name = "Contenu"
