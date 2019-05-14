@@ -25,16 +25,24 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#pricing">Prestations</a>
+                    <a class="nav-link" href="#{{ pricing.content.title|slugify }}">
+                        {{ pricing.content.title }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#equipment">Moyens techniques</a>
+                    <a class="nav-link" href="#{{ equipment.content.title|slugify }}">
+                        {{ equipment.content.title }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#testimonials">Ils parlent de nous</a>
+                    <a class="nav-link" href="#{{ testimonials.content.title|slugify }}">
+                        {{ testimonials.content.title }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#regulations">Réglementation</a>
+                    <a class="nav-link" href="#{{ regulations.content.title|slugify }}">
+                        {{ regulations.content.title }}
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#{{ contact.content.title|slugify }}">

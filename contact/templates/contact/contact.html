@@ -1,5 +1,8 @@
 {% load static %}
-<div id="{{ content.title|slugify }}" class="view text-white top-strip bottom-strip">
+<div id="{{ content.title|slugify }}" class="view background-view text-white top-strip bottom-strip"
+        {% if content.background %}
+     style="background-image: url('{{ content.background.url }}')"
+        {% endif %}>
     <div class="transparent-blue-gradient d-flex justify-content-center align-items-center py-9">
         <div class="container">
             <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">

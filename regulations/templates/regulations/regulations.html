@@ -1,0 +1,141 @@
+{% load static %}
+<div id="{{ content.title|slugify }}" class="view py-9">
+    <div class="container">
+        <h2 class="h2-responsive mb-4 font-weight-bold text-center text-uppercase">
+            {{ content.title }}
+        </h2>
+        <hr class="border-primary border-top-4 border-double w-12">
+        <div class="lead grey-text text-center w-responsive mx-auto mb-5">
+            {{ content.heading|safe }}
+        </div>
+        {{ content.text_before_scenarios|safe }}
+        {% if content.scenario_title %}
+            <div class="text-box">
+                <div class="text-box-title">{{ content.scenario_title }}</div>
+                <div class="row">
+                    <div class="col-md-4 scenario_inputs">
+                        <div class="form-group row">
+                            <label for="inhabited" class="col-6 col-form-label font-weight-bold text-lg-right">
+                                {% if content.scenario_inhabited_tooltip %}
+                                    <span class="fa-stack" data-toggle="tooltip"
+                                          title="{{ content.scenario_inhabited_tooltip }}">
+                                      <i class="fa fa-circle fa-stack-1x"></i>
+                                      <i class="fa fa-info fa-stack-1x small text-white"></i>
+                                    </span>
+                                {% endif %}
+                                Zone peuplée
+                            </label>
+                            <div class="col-6 onoffswitch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" class="onoffswitch-checkbox" id="inhabited">
+                                    <label class="onoffswitch-label" for="inhabited">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="in-sight" class="col-6 col-form-label font-weight-bold text-lg-right">
+                                {% if content.scenario_in_sight_tooltip %}
+                                    <span class="fa-stack" data-toggle="tooltip"
+                                          title="{{ content.scenario_in_sight_tooltip }}">
+                                      <i class="fa fa-circle fa-stack-1x"></i>
+                                      <i class="fa fa-info fa-stack-1x small text-white"></i>
+                                    </span>
+                                {% endif %}
+                                Drone en visuel
+                            </label>
+                            <div class="col-6 onoffswitch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" class="onoffswitch-checkbox" id="in-sight" checked>
+                                    <label class="onoffswitch-label" for="in-sight">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="altitude" class="col-sm-6 col-form-label font-weight-bold text-lg-right">
+                                Altitude maximale
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" id="altitude">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="distance" class="col-sm-6 col-form-label font-weight-bold text-lg-right">
+                                Distance maximale
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" id="distance">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="weight" class="col-sm-6 col-form-label font-weight-bold text-lg-right">
+                                Poids maximal
+                            </label>
+                            <div class="col-sm-6">
+                                <input type="text" id="weight">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="scenario_illustration">
+                            <img src="{% static "regulations/city.jpg" %}" class="scenario_city" alt="Ville">
+                            <img src="{% static "regulations/countryside.jpg" %}"
+                                 class="scenario_countryside scenario_visible" alt="Montagne">
+                            <img src="{% static "regulations/drone.gif" %}"
+                                 class="scenario_drone scenario_drone_distance_100 scenario_drone_altitude_50 scenario_drone_weight_2"
+                                 alt="Drone">
+                            <img src="{% static "regulations/tree.png" %}"
+                                 class="scenario_tree scenario_tree_1"
+                                 alt="Arbre">
+                            <img src="{% static "regulations/tree1.png" %}"
+                                 class="scenario_tree scenario_tree_2"
+                                 alt="Arbre">
+                            <img src="{% static "regulations/tree2.png" %}"
+                                 class="scenario_tree scenario_tree_3"
+                                 alt="Arbre">
+                            <img src="{% static "regulations/controller.png" %}" class="scenario_controller"
+                                 alt="Personne controllant le drone">
+                            <div class="scenario_altitude scenario_altitude_50">
+                                <span class="scenario_altitude_text">50m</span>
+                            </div>
+                            <div class="scenario_distance scenario_distance_100">
+                                <span class="scenario_distance_text">100m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scenario_explanation text-center">
+                    <div class="scenario_explanation_text scenario_no d-none">
+                        <h3 class="h3-responsive">Aucun scénario</h3>
+                        {{ content.scenario_no|safe }}
+                    </div>
+                    <div class="scenario_explanation_text scenario_1">
+                        <h3 class="h3-responsive">Scénario 1</h3>
+                        {{ content.scenario_1|safe }}
+                    </div>
+                    <div class="scenario_explanation_text scenario_2 d-none">
+                        <h3>Scénario 2</h3>
+                        {{ content.scenario_2|safe }}
+                    </div>
+                    <div class="scenario_explanation_text scenario_3 d-none">
+                        <h3>Scénario 3</h3>
+                        {{ content.scenario_3|safe }}
+                    </div>
+                    <div class="scenario_explanation_text scenario_4 d-none">
+                        <h3>Scénario 4</h3>
+                        {{ content.scenario_4 }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {{ content.text_after_scenarios|safe }}
+    </div>
+</div>

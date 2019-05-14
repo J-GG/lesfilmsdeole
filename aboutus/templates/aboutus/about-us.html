@@ -39,7 +39,7 @@
                     {{ content.third_item_description|safe }}
                 </div>
             </div>
-            {{ content.text_before_more|default:""|safe }}
+            {{ content.text_before_more|safe }}
             {% if content.more_content %}
                 <div class="text-box text-box-icon">
                     {% if content.more_title %}
@@ -48,7 +48,7 @@
                     {{ content.more_content|safe }}
                 </div>
             {% endif %}
-            {{ content.text_after_more|default:""|safe }}
+            {{ content.text_after_more|safe }}
         </div>
     </div>
 </div>
