@@ -24,19 +24,23 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <form class="col-lg-8 mb-4 mb-lg-0">
+                                <form id="contact-form" action="{% url "send_message" %}" method="POST"
+                                      class="col-lg-8 mb-4 mb-lg-0">
+                                    {% csrf_token %}
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="md-form">
                                                 <i class="fas fa-user prefix grey-text"></i>
-                                                <input type="text" id="form-name" class="form-control" required>
+                                                <input type="text" id="form-name" name="name" class="form-control"
+                                                       required>
                                                 <label for="form-name">Votre nom</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="md-form">
                                                 <i class="fas fa-envelope prefix grey-text"></i>
-                                                <input type="email" id="form-email" class="form-control" required>
+                                                <input type="email" id="form-email" name="email" class="form-control"
+                                                       required>
                                                 <label for="form-email">Votre email</label>
                                             </div>
                                         </div>
@@ -45,7 +49,8 @@
                                         <div class="col-md-12">
                                             <div class="md-form">
                                                 <i class="fas fa-tag prefix grey-text"></i>
-                                                <input type="text" id="form-subject" class="form-control" required>
+                                                <input type="text" id="form-subject" name="subject" class="form-control"
+                                                       required>
                                                 <label for="form-subject">Sujet</label>
                                             </div>
                                         </div>
@@ -54,7 +59,7 @@
                                         <div class="col-md-12">
                                             <div class="md-form">
                                                 <i class="fas fa-pencil-alt prefix grey-text"></i>
-                                                <textarea id="form-message"
+                                                <textarea id="form-message" name="message"
                                                           class="form-control md-textarea overflow-auto"
                                                           rows="4" required></textarea>
                                                 <label for="form-message">Message</label>
@@ -62,7 +67,11 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn primary hover-text-white" id="form-submit">
+                                        <div class="g-recaptcha d-inline-block"
+                                             data-sitekey="6Le1rKMUAAAAAHKkFh7HOnMwtd-MwkqEq5VIeHwA"></div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn primary hover-text-white">
                                             Envoyer
                                         </button>
                                     </div>

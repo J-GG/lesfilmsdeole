@@ -166,5 +166,13 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+# Email settings
+EMAIL_HOST = os.environ.get("LESFILMSDEOLE_EMAIL_HOST", "smtp.mailtrap.io")
+EMAIL_HOST_USER = os.environ.get("LESFILMSDEOLE_EMAIL_HOST_USER", "44c56a0261a83f")
+EMAIL_HOST_PASSWORD = os.environ.get("LESFILMSDEOLE_EMAIL_HOST_PASSWORD", "b21f7b699d7469")
+EMAIL_PORT = os.environ.get("LESFILMSDEOLE_EMAIL_PORT", "2525")
+
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get("LESFILMSDEOLE_GOOGLE_RECAPTCHA_SECRET_KEY")
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
