@@ -32,8 +32,16 @@ header {
 }
 
 /***********************************
-1.1 Titles
+1.1 Forms
 ***********************************/
+
+.was-validated .form-control:invalid,
+.was-validated textarea.form-control:invalid,
+.was-validated .form-control:valid,
+.was-validated textarea.form-control:valid {
+    padding-right: 0;
+    background: none;
+}
 
 /***********************************
 1.2 Spacing
@@ -656,6 +664,10 @@ a.focus-text-secondary:focus {
 /***********************************
 2.9 Contact
 ***********************************/
+
+.was-validated .captcha-feedback {
+    display: block;
+}
 
 /***********************************
 2.10 Footer

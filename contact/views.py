@@ -2,6 +2,7 @@ from smtplib import SMTPException
 from django.http import Http404, JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 from .forms import ContactForm
 from .models import ContactContent
 from django.conf import settings
@@ -15,8 +16,7 @@ def contact(request):
 
     form = ContactForm(request.POST or None)
     if not form.is_valid():
-        message = [input_message for input_message in form.errors]
-        return JsonResponse({"error": "fields", "messages": message}, status=422)
+        return JsonResponse({"error": "fields"}, status=422)
 
     name = form.cleaned_data['name']
     email = form.cleaned_data['email']
@@ -32,18 +32,19 @@ def contact(request):
     result = request.json()
 
     if not result['success']:
-        return JsonResponse({"error": "fields", "messages": {"recaptcha": "La vérification humaine est invalide"}},
-                            status=422)
+        return JsonResponse({"error": "captcha"}, status=422)
 
     msg = EmailMessage(subject=subject,
-                       body=message,
+                       body=render_to_string("contact/email.html", {"message": message}),
                        from_email="{0} <{1}>".format(name, email),
                        to=["Les Films d'Éole <{0}>".format(ContactContent.objects.last().email)])
+    msg.content_subtype = "html"
+
     try:
         msg.send()
     except SMTPException:
         return JsonResponse({"error": "mail",
-                             "message": "Erreur lors de l'envoi du message. Réessayer plus tard ou contactez nous par email ou par téléphone."},
+                             "message": "Erreur lors de l'envoi du message. Réessayez plus tard ou contactez nous par email ou par téléphone."},
                             status=422)
 
     return JsonResponse({"success": "success", "message": "Message envoyé!"})

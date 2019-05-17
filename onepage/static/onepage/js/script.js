@@ -233,6 +233,10 @@ $(document).ready(function () {
     $("#contact-form").submit(function (event) {
         event.preventDefault();
         let $form = $(this);
+        if (!$form.hasClass("was-validated")) {
+            $form.addClass("was-validated");
+        }
+        $form.find(".g-recaptcha + .invalid-feedback").removeClass("captcha-feedback");
 
         $.ajax({
             type: "POST",
@@ -247,9 +251,19 @@ $(document).ready(function () {
                 console.log(data);
                 if (data.success) {
                     $form.trigger("reset");
+                    $form.removeClass("was-validated");
+                    toastr.success(data.message);
+                }
+            },
+            error: function (xhr) {
+                let data = xhr.responseJSON;
+                if (data.error === "captcha") {
+                    $form.find(".g-recaptcha + .invalid-feedback").addClass("captcha-feedback");
+                }
+                else if (data.error === "email") {
+                    toastr.error(data.message);
                 }
             }
         });
-
     });
 });
