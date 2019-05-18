@@ -1,111 +1,58 @@
-{% load static %}
-<!doctype html>
-<html lang="fr">
+{% extends "onepage/base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <title>{{ configuration.title }}</title>
-    <meta name="description" content="{{ configuration.description }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="{{ configuration.favicon.url }}">
+{% block body %}
+    <header>
+        <!--Navbar -->
+        {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio pricing=sections.pricing equipment=sections.equipment testimonials=sections.testimonials regulations=sections.regulations contact=sections.contact %}
+        <!--/.Navbar -->
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-          integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
-          integrity="sha256-nXBV7Gr2lU0t+AwKsnS05DYtzZ81oYTXS6kj7LBQHfM=" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"
-          integrity="sha256-nv5vSBJAzPy+07+FvRvhV2UPpH87H/UnWMrA6nbEg7U=" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "onepage/css/mdb.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/jquery.fancybox.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/mediaBoxes.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
-</head>
+        <!--Introduction -->
+        {% include "home/home.html" with content=sections.home.content about_us=sections.about_us contact=sections.contact %}
+        <!--/.Introduction -->
+    </header>
 
-<body data-spy="scroll" data-target="#navbar-links" data-offset="200">
-<header>
-    <!--Navbar -->
-    {% include "navbar/navbar.html" with configuration=configuration home=sections.home about_us=sections.about_us industries=sections.industries portfolio=sections.portfolio pricing=sections.pricing equipment=sections.equipment testimonials=sections.testimonials regulations=sections.regulations contact=sections.contact %}
-    <!--/.Navbar -->
+    <main>
+        <!--About Us -->
+        {% include "aboutus/about-us.html" with content=sections.about_us.content %}
+        <!--/.About Us -->
 
-    <!--Introduction -->
-    {% include "home/home.html" with content=sections.home.content about_us=sections.about_us contact=sections.contact %}
-    <!--/.Introduction -->
-</header>
+        <!--Industries -->
+        {% include "industries/industries.html" with content=sections.industries.content industries=sections.industries.industries %}
+        <!--/.Industries -->
 
-<main>
-    <!--About Us -->
-    {% include "aboutus/about-us.html" with content=sections.about_us.content %}
-    <!--/.About Us -->
+        <!--Portfolio -->
+        {% include "portfolio/portfolio.html" with content=sections.portfolio.content medias=sections.portfolio.medias %}
+        <!--/.Portfolio -->
 
-    <!--Industries -->
-    {% include "industries/industries.html" with content=sections.industries.content industries=sections.industries.industries %}
-    <!--/.Industries -->
+        <!--Pricing -->
+        {% include "pricing/pricing.html" with content=sections.pricing.content prices=sections.pricing.prices contact=sections.contact %}
+        <!--/.Pricing -->
 
-    <!--Portfolio -->
-    {% include "portfolio/portfolio.html" with content=sections.portfolio.content medias=sections.portfolio.medias %}
-    <!--/.Portfolio -->
+        <!--Equipment -->
+        {% include "equipment/equipment.html" with content=sections.equipment.content equipments=sections.equipment.equipments %}
+        <!--/.Equipment -->
 
-    <!--Pricing -->
-    {% include "pricing/pricing.html" with content=sections.pricing.content prices=sections.pricing.prices contact=sections.contact %}
-    <!--/.Pricing -->
+        <!--Testimonials -->
+        {% include "testimonials/testimonials.html" with content=sections.testimonials.content testimonials=sections.testimonials.testimonials %}
+        <!--/.Testimonials -->
 
-    <!--Equipment -->
-    {% include "equipment/equipment.html" with content=sections.equipment.content equipments=sections.equipment.equipments %}
-    <!--/.Equipment -->
+        <!--Regulations -->
+        {% include "regulations/regulations.html" with content=sections.regulations.content %}
+        <!--/.Regulations -->
 
-    <!--Testimonials -->
-    {% include "testimonials/testimonials.html" with content=sections.testimonials.content testimonials=sections.testimonials.testimonials %}
-    <!--/.Testimonials -->
+        <!--Contact Us -->
+        {% include "contact/contact.html" with content=sections.contact.content %}
+        <!--/.Contact Us -->
 
-    <!--Regulations -->
-    {% include "regulations/regulations.html" with content=sections.regulations.content %}
-    <!--/.Regulations -->
+        <!--Partnership -->
+        {% include "partnership/partnership.html" with content=sections.partnership.content partners=sections.partnership.partners %}
+        <!--/.Partnership -->
+    </main>
 
-    <!--Contact Us -->
-    {% include "contact/contact.html" with content=sections.contact.content %}
-    <!--/.Contact Us -->
+    <!--/.Footer -->
+    <footer>
+        {% include "footer/footer.html" with configuration=configuration content=sections.footer.content %}
+    </footer>
+    <!--/.Footer -->
 
-    <!--Partnership -->
-    {% include "partnership/partnership.html" with content=sections.partnership.content partners=sections.partnership.partners %}
-    <!--/.Partnership -->
-</main>
-
-<!--/.Footer -->
-{% include "footer/footer.html" with configuration=configuration content=sections.footer.content %}
-<!--/.Footer -->
-
-<!-- JavaScript-->
-<script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"
-        crossorigin="anonymous"></script>
-<script src='https://www.google.com/recaptcha/api.js' async defer></script>
-<script src="{% static "onepage/js/jquery.isotope.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.imagesLoaded.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.transit.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.easing.min.js" %}" async></script>
-<script src="{% static "onepage/js/waypoints.min.js" %}" async></script>
-<script src="{% static "onepage/js/modernizr.custom.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.fancybox.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" async></script>
-<script src="{% static "onepage/js/mdb.min.js" %}" async></script>
-<script src="{% static "onepage/js/script.js" %}" async></script>
-</body>
-
-</html>
+{% endblock %}

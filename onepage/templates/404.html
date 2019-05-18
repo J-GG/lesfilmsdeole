@@ -1,0 +1,26 @@
+{% extends "onepage/base.html" %}
+
+{% block page_title %}Page non trouvée | {% endblock %}
+
+{% block body %}
+    <main class="h-100 primary d-flex justify-content-center position-relative overflow-hidden">
+        <div class="clouds">
+            <div class="cloud x1"></div>
+            <div class="cloud x1_5"></div>
+            <div class="cloud x2"></div>
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>
+        <div class='text-white z-index-2 align-items-center d-flex flex-column justify-content-center'>
+            <h1 class='z-index-2 title-404'>404</h1>
+            <hr class="hr-dot w-100 mt-0 mb-2 text-center border-white border-top-4">
+            <div class='text-uppercase position-relative subtitle-404'>La page</div>
+            <div class='text-uppercase subtitle-404-2'>n'a pas été trouvée</div>
+            <a class="btn-404 btn border white black-text border-white hover-text-white hover-secondary-background hover-border-secondary"
+               href="{% url "index" %}">
+                Retourner à l'accueil
+            </a>
+        </div>
+    </main>
+{% endblock %}

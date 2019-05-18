@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
+from django.template import RequestContext
+
 from configuration.models import Configuration
 from home.models import HomeContent
 from aboutus.models import AboutUsContent
@@ -29,3 +31,10 @@ def index(request):
     sections["partnership"] = {"content": PartnershipContent.objects.last(), "partners": Partner.objects.all()}
     sections["footer"] = {"content": FooterContent.objects.last()}
     return render(request, "onepage/index.html", locals())
+
+
+def page_not_found(request, exception):
+    configuration = Configuration.objects.last()
+    response = render_to_response('404.html', locals())
+    response.status_code = 404
+    return response

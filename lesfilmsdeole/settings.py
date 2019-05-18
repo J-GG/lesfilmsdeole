@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("LESFILMSDEOLE_SECRET_KEY", "2@o-yih2@c8&(q1wp@5sp12rljojvul7==4&sf00k+2td2tdaf")
 
-DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG", False)
+DEBUG = os.environ.get("LESFILMSDEOLE_DEBUG") == "1"
 
 ALLOWED_HOSTS = os.environ.get("LESFILMSDEOLE_ALLOWED_HOSTS", "localhost").split(",")
 
