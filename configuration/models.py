@@ -1,5 +1,4 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from filer.fields.image import FilerImageField
 
 
@@ -11,6 +10,9 @@ class Configuration(models.Model):
     favicon = FilerImageField(blank=True, null=True, verbose_name="Icône dans le navigateur", on_delete=models.SET_NULL,
                               related_name="favicon")
     logo = FilerImageField(blank=True, null=True, verbose_name="Logo", on_delete=models.SET_NULL, related_name="logo")
+    networks_logo = FilerImageField(blank=True, null=True,
+                                    verbose_name="Logo pour les réseaux sociaux (recommandé : 1200*630px)",
+                                    on_delete=models.SET_NULL, related_name="networks_logo")
     analytics = models.TextField(blank=True, null=True, verbose_name="Code Google Analytics")
 
     class Meta:

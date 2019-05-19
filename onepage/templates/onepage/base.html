@@ -10,6 +10,12 @@
     <meta name="description" content="{{ configuration.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="{{ configuration.favicon.url }}">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ configuration.title }}"/>
+    <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+    <meta property="og:image" content="http://{{ request.get_host }}{{ configuration.networks_logo.url }}"/>
+    <meta property="og:description" content="{{ configuration.description }}"/>
+    <meta property="og:locale" content="fr_FR"/>
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
