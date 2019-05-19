@@ -35,6 +35,7 @@
     {% compress css %}
         <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
     {% endcompress %}
+    {{ configuration.analytics|safe }}
 </head>
 
 <body data-spy="scroll" data-target="#navbar-links" data-offset="200">

@@ -11,6 +11,7 @@ class Configuration(models.Model):
     favicon = FilerImageField(blank=True, null=True, verbose_name="Icône dans le navigateur", on_delete=models.SET_NULL,
                               related_name="favicon")
     logo = FilerImageField(blank=True, null=True, verbose_name="Logo", on_delete=models.SET_NULL, related_name="logo")
+    analytics = models.TextField(blank=True, null=True, verbose_name="Code Google Analytics")
 
     class Meta:
         verbose_name = "Configuration"
