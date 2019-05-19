@@ -1,5 +1,4 @@
 from django.db import models
-from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 from ckeditor.fields import RichTextField
 
@@ -12,8 +11,6 @@ class FooterContent(models.Model):
                            on_delete=models.SET_NULL, related_name="terms")
     legal_notice = FilerFileField(blank=True, null=True, verbose_name="Mentions légales",
                                   on_delete=models.SET_NULL, related_name="legal_notice")
-    background = FilerImageField(blank=True, null=True, verbose_name="Image de fond", on_delete=models.SET_NULL,
-                                 related_name="background")
 
     class Meta:
         verbose_name = "Contenu"
