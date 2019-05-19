@@ -1,4 +1,6 @@
 {% load static %}
+{% load compress %}
+
 <!doctype html>
 <html lang="fr">
 
@@ -11,20 +13,28 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
           integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
           integrity="sha256-nXBV7Gr2lU0t+AwKsnS05DYtzZ81oYTXS6kj7LBQHfM=" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"
           integrity="sha256-nv5vSBJAzPy+07+FvRvhV2UPpH87H/UnWMrA6nbEg7U=" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "onepage/css/mdb.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/jquery.fancybox.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/mediaBoxes.min.css" %}">
-    <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
+    {% compress css %}
+        <link rel="stylesheet" href="{% static "onepage/css/mdb.min.css" %}">
+        <link rel="stylesheet" href="{% static "onepage/css/jquery.fancybox.min.css" %}">
+        <link rel="stylesheet" href="{% static "onepage/css/mediaBoxes.min.css" %}">
+    {% endcompress %}
+    {% compress css %}
+        <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
+    {% endcompress %}
 </head>
 
 <body data-spy="scroll" data-target="#navbar-links" data-offset="200">
@@ -47,16 +57,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"
         crossorigin="anonymous"></script>
 <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-<script src="{% static "onepage/js/jquery.isotope.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.imagesLoaded.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.transit.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.easing.min.js" %}" async></script>
-<script src="{% static "onepage/js/waypoints.min.js" %}" async></script>
-<script src="{% static "onepage/js/modernizr.custom.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.fancybox.min.js" %}" async></script>
-<script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" async></script>
-<script src="{% static "onepage/js/mdb.min.js" %}" async></script>
-<script src="{% static "onepage/js/script.js" %}" async></script>
+{% compress js %}
+    <script src="{% static "onepage/js/jquery.isotope.min.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.imagesLoaded.min.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.transit.min.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.easing.min.js" %}" async></script>
+    <script src="{% static "onepage/js/waypoints.min.js" %}" async></script>
+    <script src="{% static "onepage/js/modernizr.custom.min.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.fancybox.min.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" async></script>
+    <script src="{% static "onepage/js/mdb.min.js" %}" async></script>
+    <script src="{% static "onepage/js/script.js" %}" async></script>
+{% endcompress %}
 </body>
 
 </html>
