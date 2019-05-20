@@ -8,10 +8,10 @@ class AboutUsContent(models.Model):
 
     title = models.CharField(max_length=200, verbose_name="Titre")
     heading = RichTextField(blank=True, null=True, verbose_name="Entête")
-    more_title = models.CharField(blank=True, null=True, max_length=200,
-                                  verbose_name="Titre du bloc d'informations supplémentaires")
     text_before_more = RichTextField(blank=True, null=True,
                                      verbose_name="Texte avant le bloc d'informations supplémentaires")
+    more_title = models.CharField(blank=True, null=True, max_length=200,
+                                  verbose_name="Titre du bloc d'informations supplémentaires")
     more_content = RichTextField(blank=True, null=True, verbose_name="Contenu du bloc d'informations supplémentaires")
 
     text_after_more = RichTextField(blank=True, null=True,
