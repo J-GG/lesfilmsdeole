@@ -64,7 +64,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
-    'django.middleware.gzip.GZipMiddleware',
 ]
 
 ROOT_URLCONF = 'lesfilmsdeole.urls'
@@ -94,7 +93,7 @@ WSGI_APPLICATION = 'lesfilmsdeole.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE', "django.db.backends.postgresql_psycopg2"),
+        'ENGINE': os.environ.get('LESFILMSDEOLE_DATABASE_ENGINE', "django.db.backends.postgresql"),
         'NAME': os.environ.get('LESFILMSDEOLE_DATABASE_NAME', "lesfilmsdeole"),
         'USER': os.environ.get('LESFILMSDEOLE_DATABASE_USER', "postgres"),
         'PASSWORD': os.environ.get('LESFILMSDEOLE_DATABASE_PASSWORD', "toor"),
