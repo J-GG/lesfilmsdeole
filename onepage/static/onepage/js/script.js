@@ -248,11 +248,11 @@ $(document).ready(function () {
                 }
             },
             success: function (data) {
-                console.log(data);
                 if (data.success) {
                     $form.trigger("reset");
                     $form.removeClass("was-validated");
                     toastr.success(data.message);
+                    grecaptcha.reset();
                 }
             },
             error: function (xhr) {
