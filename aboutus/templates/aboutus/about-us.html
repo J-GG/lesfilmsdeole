@@ -9,36 +9,18 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 text-center">
-                {% if content.first_item_image %}
-                    <img class="img-fluid m-auto" src="{{ content.first_item_image.url }}"
-                         alt="{{ content.first_item_title }}" width="100">
-                {% endif %}
-                <h3 class="h3-responsive font-weight-bold my-4">{{ content.first_item_title }}</h3>
-                <div class="grey-text mb-md-0 mb-5">
-                    {{ content.first_item_description|safe }}
+            {% for info in infos %}
+                <div class="col-md-4 text-center">
+                    {% if info.icon %}
+                        <img class="img-fluid m-auto" src="{{ info.icon.url }}"
+                             alt="{{ info.title }}" width="100">
+                    {% endif %}
+                    <h3 class="h3-responsive font-weight-bold my-4">{{ info.title }}</h3>
+                    <div class="grey-text mb-md-0 mb-5">
+                        {{ info.description|safe }}
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 text-center">
-                {% if content.second_item_image %}
-                    <img class="img-fluid m-auto" src="{{ content.second_item_image.url }}"
-                         alt="{{ content.second_item_title }}" width="100">
-                {% endif %}
-                <h3 class="h3-responsive font-weight-bold my-4">{{ content.second_item_title }}</h3>
-                <div class="grey-text mb-md-0 mb-5">
-                    {{ content.second_item_description|safe }}
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                {% if content.third_item_image %}
-                    <img class="img-fluid m-auto" src="{{ content.third_item_image.url }}"
-                         alt="{{ content.third_item_title }}" width="100">
-                {% endif %}
-                <h3 class="h3-responsive font-weight-bold my-4">{{ content.third_item_title }}</h3>
-                <div class="grey-text mb-md-0 mb-5">
-                    {{ content.third_item_description|safe }}
-                </div>
-            </div>
+            {% endfor %}
         </div>
         {{ content.text_before_more|safe }}
         {% if content.more_content %}

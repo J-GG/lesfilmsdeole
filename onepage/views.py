@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response
 from configuration.models import Configuration
 from home.models import HomeContent
-from aboutus.models import AboutUsContent
+from aboutus.models import AboutUsContent, AboutUsInfo
 from industries.models import IndustriesContent, Industry
 from portfolio.models import PortfolioContent, PortfolioMedia
 from pricing.models import PricingContent, Price
@@ -17,7 +17,7 @@ def index(request):
     configuration = Configuration.objects.last()
     sections = dict()
     sections["home"] = {"content": HomeContent.objects.last()}
-    sections["about_us"] = {"content": AboutUsContent.objects.last()}
+    sections["about_us"] = {"content": AboutUsContent.objects.last(), "infos": AboutUsInfo.objects.all()}
     sections["industries"] = {"content": IndustriesContent.objects.last(), "industries": Industry.objects.all()}
     sections["portfolio"] = {"content": PortfolioContent.objects.last(), "medias": PortfolioMedia.objects.all()}
     sections["pricing"] = {"content": PricingContent.objects.last(), "prices": Price.objects.all()}

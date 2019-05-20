@@ -8,18 +8,6 @@ class AboutUsContent(models.Model):
 
     title = models.CharField(max_length=200, verbose_name="Titre")
     heading = RichTextField(blank=True, null=True, verbose_name="Entête")
-    first_item_image = FilerImageField(blank=True, null=True, verbose_name="Image du premier point",
-                                       on_delete=models.SET_NULL, related_name="first_item_image")
-    first_item_title = models.CharField(blank=True, null=True, max_length=200, verbose_name="Titre du premier point")
-    first_item_description = RichTextField(blank=True, null=True, verbose_name="Description du premier point")
-    second_item_image = FilerImageField(blank=True, null=True, verbose_name="Image du second point",
-                                        on_delete=models.SET_NULL, related_name="second_item_image")
-    second_item_title = models.CharField(blank=True, null=True, max_length=200, verbose_name="Titre du second point")
-    second_item_description = RichTextField(blank=True, null=True, verbose_name="Description du second point")
-    third_item_image = FilerImageField(blank=True, null=True, verbose_name="Image du troisième point",
-                                       on_delete=models.SET_NULL, related_name="third_item_image")
-    third_item_title = models.CharField(blank=True, null=True, max_length=200, verbose_name="Titre du troisième point")
-    third_item_description = RichTextField(blank=True, null=True, verbose_name="Description du troisième point")
     more_title = models.CharField(blank=True, null=True, max_length=200,
                                   verbose_name="Titre du bloc d'informations supplémentaires")
     text_before_more = RichTextField(blank=True, null=True,
@@ -31,6 +19,23 @@ class AboutUsContent(models.Model):
 
     class Meta:
         verbose_name = "Contenu"
+
+    def __str__(self):
+        return self.title
+
+
+class AboutUsInfo(models.Model):
+    """Represents an info to be displayed."""
+
+    icon = FilerImageField(blank=True, null=True, verbose_name="Icône",
+                           on_delete=models.SET_NULL, related_name="about_us_info_icon")
+    title = models.CharField(blank=True, null=True, max_length=200, verbose_name="Titre")
+    description = RichTextField(blank=True, null=True, verbose_name="Description")
+    order = models.IntegerField(verbose_name="Ordre d'affichage")
+
+    class Meta:
+        verbose_name = "Point d'information"
+        ordering = ["order"]
 
     def __str__(self):
         return self.title
