@@ -43,8 +43,6 @@ def contact(request):
     try:
         msg.send()
     except SMTPException:
-        return JsonResponse({"error": "mail",
-                             "message": "Erreur lors de l'envoi du message. Réessayez plus tard ou contactez nous par email ou par téléphone."},
-                            status=422)
+        return JsonResponse({"error": "mail"}, status=422)
 
     return JsonResponse({"success": "success", "message": "Message envoyé!"})

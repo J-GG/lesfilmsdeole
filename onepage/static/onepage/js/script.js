@@ -256,12 +256,12 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr) {
-                let data = xhr.responseJSON;
-                if (data.error === "captcha") {
-                    $form.find(".g-recaptcha + .invalid-feedback").addClass("captcha-feedback");
+                if (!xhr || !xhr.responseJSON || !xhr.responseJSON.error || xhr.responseJSON.error === "email") {
+                    toastr.error("Erreur lors de l'envoi du message. Réessayez plus tard ou contactez nous par email ou par téléphone.");
                 }
-                else if (data.error === "email") {
-                    toastr.error(data.message);
+                else if (xhr.responseJSON.error === "captcha") {
+                    $form.find(".g-recaptcha + .invalid-feedback").addClass("captcha-feedback");
+                    grecaptcha.reset();
                 }
             }
         });
