@@ -7,6 +7,7 @@ from .forms import ContactForm
 from .models import ContactContent
 from django.conf import settings
 import requests
+import lesfilmsdeole.settings
 
 
 @require_http_methods(['POST'])
@@ -34,15 +35,15 @@ def contact(request):
     if not result['success']:
         return JsonResponse({"error": "captcha"}, status=422)
 
-    msg = EmailMessage(subject=subject,
-                       body=render_to_string("contact/email.html", {"message": message}),
-                       from_email="{0} <{1}>".format(name, email),
-                       to=["Les Films d'Éole <{0}>".format(ContactContent.objects.last().email)])
-    msg.content_subtype = "html"
+    response = requests.post(
+        settings.EMAIL_URL,
+        auth=("api", settings.EMAIL_API_KEY),
+        data={"from": "{0} <{1}>".format(name, email),
+              "to": ["Les Films d'Éole <{0}>".format(ContactContent.objects.last().email)],
+              "subject": subject,
+              "text": render_to_string("contact/email.html", {"message": message})})
 
-    try:
-        msg.send()
-    except SMTPException:
-        return JsonResponse({"error": "mail"}, status=422)
-
-    return JsonResponse({"success": "success", "message": "Message envoyé!"})
+    if response.status_code == 200:
+        return JsonResponse({"success": "success", "message": "Message envoyé!"})
+    else:
+        return JsonResponse({"error": "email"}, status=422)

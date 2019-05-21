@@ -174,9 +174,8 @@ CKEDITOR_CONFIGS = {
 }
 
 # Email settings
-EMAIL_HOST = os.environ.get("LESFILMSDEOLE_EMAIL_HOST", "smtp.mailtrap.io")
-EMAIL_HOST_USER = os.environ.get("LESFILMSDEOLE_EMAIL_HOST_USER", "44c56a0261a83f")
-EMAIL_HOST_PASSWORD = os.environ.get("LESFILMSDEOLE_EMAIL_HOST_PASSWORD", "b21f7b699d7469")
-EMAIL_PORT = os.environ.get("LESFILMSDEOLE_EMAIL_PORT", "2525")
+EMAIL_API_KEY = os.environ.get("LESFILMSDEOLE_EMAIL_API_KEY", "55020d8f9b1d8bd936ce8d3fd6aec33b-52b0ea77-bb91f2dd")
+EMAIL_URL = os.environ.get("LESFILMSDEOLE_EMAIL_URL",
+                           "https://api.mailgun.net/v3/sandbox8626b8faecaa4c93869d6af9aabff63c.mailgun.org/messages")
 
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get("LESFILMSDEOLE_GOOGLE_RECAPTCHA_SECRET_KEY")
