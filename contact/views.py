@@ -44,6 +44,6 @@ def contact(request):
               "text": render_to_string("contact/email.html", {"message": message})})
 
     if response.status_code == 200:
-        return JsonResponse({"success": "success", "message": "Message envoyé!"})
+        return JsonResponse({"success": "success"})
     else:
-        return JsonResponse({"error": "email"}, status=422)
+        return JsonResponse({"error": "email", "message": response.text}, status=422)
