@@ -17,6 +17,10 @@ class ContactContent(models.Model):
     facebook = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien FB")
     youtube = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien Youtube")
     vimeo = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien Viméo")
+    email_success_message = models.CharField(max_length=250,
+                                             verbose_name="Message affiché en cas de succès à la soumission du formulaire de contact")
+    email_error_message = models.CharField(max_length=250,
+                                           verbose_name="Message affiché en cas d'échec à la soumission du formulaire de contact")
 
     class Meta:
         verbose_name = "Contenu"

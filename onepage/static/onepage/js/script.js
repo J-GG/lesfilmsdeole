@@ -257,10 +257,7 @@ $(document).ready(function () {
             },
             error: function (xhr) {
                 if (!xhr || !xhr.responseJSON || !xhr.responseJSON.error || xhr.responseJSON.error === "email") {
-                    toastr.error("Erreur lors de l'envoi du message. Réessayez plus tard ou contactez nous par email ou par téléphone.");
-                    if (xhr.responseJSON.message) {
-                        console.log(xhr.responseJSON.message)
-                    }
+                    toastr.error(data.message);
                 }
                 else if (xhr.responseJSON.error === "captcha") {
                     $form.find(".g-recaptcha + .invalid-feedback").addClass("captcha-feedback");
