@@ -1,6 +1,34 @@
 $(document).ready(function () {
 
     /*=====================================
+    RGPD
+    =====================================*/
+
+    tarteaucitron.init({
+        "privacyUrl": "", /* Privacy policy url */
+
+        "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+        "cookieName": "tarteaucitron", /* Cookie name */
+
+        "orientation": "bottom", /* Banner position (top - bottom) */
+        "showAlertSmall": true, /* Show the small banner on bottom right */
+        "cookieslist": true, /* Show the cookie list */
+
+        "adblocker": false, /* Show a Warning if an adblocker is detected */
+        "AcceptAllCta": true, /* Show the accept all button when highPrivacy on */
+        "highPrivacy": false, /* Disable auto consent */
+        "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+        "removeCredit": false, /* Remove credit link */
+        "moreInfoLink": true, /* Show more info link */
+        "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+    });
+
+    let analytics_url = $("script[src*='www.googletagmanager.com']").attr("src");
+    tarteaucitron.user.gtagUa = analytics_url.substr(analytics_url.indexOf("UA"));
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+
+    /*=====================================
     Tooltip
     =====================================*/
 

@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{% static "onepage/css/mdb.min.css" %}">
     <link rel="stylesheet" href="{% static "onepage/css/jquery.fancybox.min.css" %}">
     <link rel="stylesheet" href="{% static "onepage/css/mediaBoxes.min.css" %}">
+    <link rel="stylesheet" href="{% static "onepage/css/tarteaucitron.css" %}">
     {% compress css %}
         <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
     {% endcompress %}
@@ -63,16 +64,18 @@
         crossorigin="anonymous"></script>
 <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 {% compress js %}
-    <script src="{% static "onepage/js/jquery.isotope.min.js" %}" async></script>
-    <script src="{% static "onepage/js/jquery.imagesLoaded.min.js" %}" async></script>
-    <script src="{% static "onepage/js/jquery.transit.min.js" %}" async></script>
-    <script src="{% static "onepage/js/jquery.easing.min.js" %}" async></script>
-    <script src="{% static "onepage/js/waypoints.min.js" %}" async></script>
-    <script src="{% static "onepage/js/modernizr.custom.min.js" %}" async></script>
-    <script src="{% static "onepage/js/jquery.fancybox.min.js" %}" async></script>
-    <script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" async></script>
-    <script src="{% static "onepage/js/mdb.min.js" %}" async></script>
-    <script src="{% static "onepage/js/script.js" %}" async></script>
+    <script src="{% static "onepage/js/jquery.isotope.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/jquery.imagesLoaded.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/jquery.transit.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/jquery.easing.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/waypoints.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/modernizr.custom.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/jquery.fancybox.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/mdb.min.js" %}" defer></script>
+    <script src="{% static "onepage/js/tarteaucitron.js" %}" defer></script>
+    <script src="{% static "onepage/js/tarteaucitron.services.js" %}" defer></script>
+    <script src="{% static "onepage/js/script.js" %}" defer></script>
 {% endcompress %}
 </body>
 
