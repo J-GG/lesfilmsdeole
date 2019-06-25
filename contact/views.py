@@ -47,5 +47,5 @@ def contact(request):
             {"success": "success", "message": contact_content.email_success_message})
     else:
         return JsonResponse({"error": "email",
-                             "message": contact.email_error_message},
+                             "message": contact_content.email_error_message},
                             status=422)

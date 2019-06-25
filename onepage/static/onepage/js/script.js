@@ -285,7 +285,7 @@ $(document).ready(function () {
             },
             error: function (xhr) {
                 if (!xhr || !xhr.responseJSON || !xhr.responseJSON.error || xhr.responseJSON.error === "email") {
-                    toastr.error(data.message);
+                    toastr.error(xhr.responseJSON.message);
                 }
                 else if (xhr.responseJSON.error === "captcha") {
                     $form.find(".g-recaptcha + .invalid-feedback").addClass("captcha-feedback");
