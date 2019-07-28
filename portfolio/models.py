@@ -56,7 +56,7 @@ class PortfolioMedia(models.Model):
         if self.is_youtube_video():
             matches = PortfolioMedia.YOUTUBE_PATTERN.search(self.link)
             if matches:
-                return "https://img.youtube.com/vi/{0}/maxresdefault.jpg".format(matches.group(1))
+                return "https://img.youtube.com/vi/{0}/hqdefault.jpg".format(matches.group(1))
             else:
                 return None
         elif self.is_vimeo_video():
