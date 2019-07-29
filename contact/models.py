@@ -21,6 +21,10 @@ class ContactContent(models.Model):
                                              verbose_name="Message affiché en cas de succès à la soumission du formulaire de contact")
     email_error_message = models.CharField(max_length=250,
                                            verbose_name="Message affiché en cas d'échec à la soumission du formulaire de contact")
+    email_subject = models.CharField(max_length=250,
+                                     verbose_name="Sujet de l'email précédant le sujet rempli dans le formulaire du contact.")
+    email_footer = models.CharField(max_length=250,
+                                    verbose_name="Message affiché en bas de chaque email reçu.")
 
     class Meta:
         verbose_name = "Contenu"

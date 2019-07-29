@@ -1,3 +1,6 @@
-{{ message }}
-<hr>
-Message envoyé via le formulaire de contact des Films d'Éole.
+<p>{{ message }}</p>
+
+{% if footer %}
+    <div style="border: 1px solid #000;width: 280px;"></div>
+    <p>{{ footer }}</p>
+{% endif %}

@@ -39,8 +39,9 @@ def contact(request):
         auth=("api", settings.EMAIL_API_KEY),
         data={"from": "{0} <{1}>".format(name, email),
               "to": ["Les Films d'Éole <{0}>".format(contact_content.email)],
-              "subject": subject,
-              "text": render_to_string("contact/email.html", {"message": message})})
+              "subject": "{0} {1}".format(contact_content.email_subject, subject),
+              "html": render_to_string("contact/email.html",
+                                       {"message": message, "footer": contact_content.email_footer})})
 
     if response.status_code == 200:
         return JsonResponse(
