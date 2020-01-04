@@ -1,5 +1,5 @@
-from django.db import models
 from ckeditor.fields import RichTextField
+from django.db import models
 from filer.fields.image import FilerImageField
 
 
@@ -13,7 +13,8 @@ class ContactContent(models.Model):
     address = models.CharField(blank=True, null=True, max_length=200, verbose_name="Adresse")
     phone = models.CharField(blank=True, null=True, max_length=200, verbose_name="Téléphone")
     email = models.EmailField(blank=True, null=True, max_length=200, verbose_name="Adresse email")
-    facebook_plugin = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien plugin FB")
+    map = models.URLField(blank=True, null=True, max_length=400, verbose_name="Lien Google map")
+    facebook_plugin = models.URLField(blank=True, null=True, max_length=300, verbose_name="Lien plugin FB")
     facebook = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien FB")
     youtube = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien Youtube")
     vimeo = models.URLField(blank=True, null=True, max_length=200, verbose_name="Lien Viméo")
@@ -21,7 +22,7 @@ class ContactContent(models.Model):
                                              verbose_name="Message affiché en cas de succès à la soumission du formulaire de contact")
     email_error_message = models.CharField(max_length=250,
                                            verbose_name="Message affiché en cas d'échec à la soumission du formulaire de contact")
-    email_subject = models.CharField(max_length=250,
+    email_subject = models.CharField(blank=True, null=True, max_length=250,
                                      verbose_name="Sujet de l'email précédant le sujet rempli dans le formulaire du contact.")
     email_footer = models.CharField(max_length=250,
                                     verbose_name="Message affiché en bas de chaque email reçu.")

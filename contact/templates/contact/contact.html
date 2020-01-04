@@ -22,6 +22,10 @@
                                         Écrivez-nous
                                     </h3>
                                 </div>
+                                {% if content.map %}
+                                    <iframe src="{{ content.map|safe }}" class="w-100 border-0" height="300"
+                                            allowfullscreen="" title="Position"></iframe>
+                                {% endif %}
                             </div>
                             <div class="row">
                                 <form id="contact-form" action="{% url "send_message" %}" method="POST"
@@ -93,10 +97,6 @@
                                     </div>
                                 </form>
                                 <div class="col-lg-4 text-center black-text my-auto">
-                                    <a class="btn-floating primary accent-1">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </a>
-                                    <p>{{ content.address }}</p>
                                     <a href="tel:{{ content.phone|cut:" " }}" class="btn-floating primary accent-1"
                                        aria-label="Phone number">
                                         <i class="fas fa-phone"></i>
