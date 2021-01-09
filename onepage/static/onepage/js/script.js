@@ -128,7 +128,7 @@ $(document).ready(function () {
     });
 
     $("#altitude").ionRangeSlider({
-        values: ["50m", "150m"],
+        values: ["50m", "120m"],
         grid: true
     });
 
@@ -137,10 +137,10 @@ $(document).ready(function () {
         grid: true
     });
 
-    let isScenario1Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && inSight && distance <= 200 && altitude <= 150 && weight <= 25;
-    let isScenario2Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && distance <= 1000 && ((weight <= 25 && altitude <= 50) || (weight <= 2 && altitude <= 150));
-    let isScenario3Suitable = (inhabited, inSight, distance, altitude, weight) => inhabited && inSight && distance <= 100 && altitude <= 150 && weight <= 8;
-    let isScenario4Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && altitude <= 150 && weight <= 2;
+    let isScenario1Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && inSight && distance <= 200 && altitude <= 120 && weight <= 25;
+    let isScenario2Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && distance <= 1000 && ((weight <= 25 && altitude <= 50) || (weight <= 2 && altitude <= 120));
+    let isScenario3Suitable = (inhabited, inSight, distance, altitude, weight) => inhabited && inSight && distance <= 100 && altitude <= 120 && weight <= 8;
+    let isScenario4Suitable = (inhabited, inSight, distance, altitude, weight) => !inhabited && altitude <= 120 && weight <= 2;
 
     $(".scenario_inputs :input").on("change", function () {
         let inhabited = $("#inhabited").prop("checked") === true
@@ -170,8 +170,8 @@ $(document).ready(function () {
         $(".scenario_drone").addClass("scenario_drone_distance_" + distance);
         $(".scenario_distance_text").text($("#distance").val());
 
-        $(".scenario_altitude").removeClass("scenario_altitude_50 scenario_altitude_150");
-        $(".scenario_drone").removeClass("scenario_drone_altitude_50 scenario_drone_altitude_150");
+        $(".scenario_altitude").removeClass("scenario_altitude_50 scenario_altitude_120");
+        $(".scenario_drone").removeClass("scenario_drone_altitude_50 scenario_drone_altitude_120");
         $(".scenario_altitude").addClass("scenario_altitude_" + altitude);
         $(".scenario_drone").addClass("scenario_drone_altitude_" + altitude);
         $(".scenario_altitude_text").text($("#altitude").val());
