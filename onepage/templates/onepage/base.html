@@ -37,6 +37,9 @@
     <link rel="stylesheet" href="{% static "onepage/css/jquery.fancybox.min.css" %}">
     <link rel="stylesheet" href="{% static "onepage/css/mediaBoxes.min.css" %}">
     <link rel="stylesheet" href="{% static "onepage/css/tarteaucitron.css" %}">
+    <link rel="preload" href="{% static "onepage/font/roboto/Roboto-Bold.woff2" %}" as="font">
+    <link rel="preload" href="{% static "onepage/font/roboto/Roboto-Light.woff2" %}" as="font">
+    <link rel="preload" href="{% static "onepage/font/roboto/Roboto-Regular.woff2" %}" as="font">
     {% compress css %}
         <link rel="stylesheet" href="{% static "onepage/css/style.css" %}">
     {% endcompress %}
@@ -73,8 +76,8 @@
     <script src="{% static "onepage/js/jquery.fancybox.min.js" %}" defer></script>
     <script src="{% static "onepage/js/jquery.mediaBoxes.min.js" %}" defer></script>
     <script src="{% static "onepage/js/mdb.min.js" %}" defer></script>
-    <script src="{% static "onepage/js/tarteaucitron.js" %}" defer></script>
-    <script src="{% static "onepage/js/tarteaucitron.services.js" %}" defer></script>
+    <script src="{% static "onepage/js/tarteaucitron.js" %}" async defer></script>
+    <script src="{% static "onepage/js/tarteaucitron.services.js" %}" async defer></script>
     <script src="{% static "onepage/js/script.js" %}" defer></script>
 {% endcompress %}
 </body>
