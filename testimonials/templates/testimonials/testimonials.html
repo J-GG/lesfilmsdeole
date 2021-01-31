@@ -19,7 +19,7 @@
                         {% if testimonial.logo %}
                             <img class="testimonials-image mx-auto mb-4"
                                  src="{{ testimonial.logo.url }}"
-                                 alt="{{ testimonial.title }}">
+                                 alt="{{ testimonial.title }}" loading="lazy">
                         {% endif %}
                         <h3 class="h4-responsive font-weight-bolder letter-spacing-1">
                             - {{ testimonial.title }} -
