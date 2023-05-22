@@ -1,6 +1,6 @@
 Django==2.2.13
 django-filer==1.5.0
 django-ckeditor==5.7.0
-requests==2.21.0
+requests==2.31.0
 django-compressor==1.6
 psycopg2==2.8.2
